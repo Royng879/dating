@@ -605,10 +605,7 @@
             // 把资料发去 Google Sheets
             var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyg42aemeGoNLUhj_jvPexX0uuJEvYDaP9OzQAcaO2dkHnDbXbc9pYIiztxGPq_QSDnpQ/exec';
             var t = new Date().toLocaleString('zh-MY', {timeZone:'Asia/Kuala_Lumpur'});
-            fetch(SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone) + '&time=' + encodeURIComponent(t), {
-                method: 'GET',
-                mode: 'no-cors'
-            }).catch(function() {});
+            new Image().src = SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone) + '&time=' + encodeURIComponent(t);
 
             // 跳去第二页，带上资料
             window.location.href = 'thankyou.html?name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone);
