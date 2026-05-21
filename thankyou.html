@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-MY">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料已收到 | A.I 恋爱系统</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+        body { background: #f8f9fa; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+        .card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 32px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+        .checkmark {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, #10b981, #047857);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+        h1 { font-size: 22px; font-weight: 900; color: #0f172a; margin-bottom: 8px; }
+        .sub { font-size: 14px; color: #64748b; margin-bottom: 28px; line-height: 1.6; }
+        .name-box {
+            background: #f3e8ff;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 15px;
+            color: #7c3aed;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+        .divider { font-size: 13px; color: #94a3b8; margin-bottom: 20px; }
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25d366;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 16px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+            transition: all 0.2s;
+            margin-bottom: 12px;
+        }
+        .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.4); }
+        .wa-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
+        .skip { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+        .skip a { color: #7c3aed; text-decoration: none; }
+        .badge { display: inline-block; background: #fef9c3; color: #92400e; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px; border: 1px solid #fde68a; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="checkmark">✓</div>
+        <div class="badge">🎉 资料已成功收到</div>
+        <h1>就差最后一步了！</h1>
+        <p class="sub">老师会在 <b>24 小时内</b> 主动联系你。<br>你也可以现在直接点下面按钮，跳转 WhatsApp 跟老师确认报名。</p>
+
+        <div class="name-box" id="nameBox">你好！</div>
+
+        <p class="divider">👇 点击联系老师，确认报名 + 领取课程</p>
+
+        <a class="wa-btn" id="waBtn" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            立即 WhatsApp 老师确认报名
+        </a>
+
+        <p class="skip">不方便现在联系？<a href="index.html">返回首页</a> · 老师会在 24 小时内主动找你</p>
+    </div>
+
+    <script>
+        var MY_WHATSAPP = "601157581601"; // 替换成你的真实号码
+
+        var params = new URLSearchParams(window.location.search);
+        var name  = params.get('name')  || '同学';
+        var phone = params.get('phone') || '';
+
+        document.getElementById('nameBox').textContent = '👋 ' + name + '，资料已收到！';
+
+        var msg = "你好老师！我是 " + name + "（WhatsApp: " + phone + "），我已填写报名表，想确认报名 RM49 的 A.I 恋爱系统课程，麻烦安排一下，谢谢！";
+        document.getElementById('waBtn').href = "https://wa.me/" + MY_WHATSAPP + "?text=" + encodeURIComponent(msg);
+    </script>
+</body>
+</html>
